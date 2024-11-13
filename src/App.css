@@ -32,7 +32,20 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+nav a {
+  display: inline-block;
+  margin: 10px;
+  text-decoration: none;
+  color: #ff1f1f;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
 }
