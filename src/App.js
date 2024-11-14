@@ -1,29 +1,11 @@
 import { createBrowserRouter, Link, Outlet, RouterProvider, useParams } from 'react-router-dom';
 import './App.css';
+import { useEffect } from 'react';
+import router from './router';
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Layout />,
-    children: [
-      {
-        path: '/',
-        element: <Home />
-      },
-      {
-        path: '/about',
-        element: <About />
-      },
-      {
-        path: '/user/:username',
-        element: <User />
-      }
-    ]
-  }
-]);
-
-function User() {
+export function User() {
   const { username } = useParams();
+
   return (
     <>
       <h1>User: {username}</h1>
@@ -31,7 +13,7 @@ function User() {
   )
 }
 
-function Home() {
+export function Home() {
   return (
     <>
       <h1>Home Page</h1>
@@ -39,7 +21,7 @@ function Home() {
   )
 }
 
-function About() {
+export function About() {
   return (
     <>
       <h1>About Page</h1>
@@ -47,7 +29,7 @@ function About() {
   )
 }
 
-function Layout() {
+export function Layout() {
   return (
     <div className="Layout">
       <nav>
@@ -59,6 +41,7 @@ function Layout() {
       <div className="router-outlet">
         <Outlet />
       </div>
+
     </div>
   )
 }
